@@ -1,22 +1,17 @@
 # Micro Projects
 
-
 Various little tools and utilities to place into assorted Raspberry Pis on the network. Or stand-alone app-ish things.
 
 ## Hoarder Util (h-util)
 
-Terminal utility to automate some common data tasks while data hoarding, such as:
-
-- Prefixing image names by their creation date
-- Tagging video metadata by their title (e.g. with YT downloader)
-- Quickly compress some media files for storage
-- Umu
+Moved to [own project](https://github.com/Perugia-Viewer/Hoarder-Util)
 
 ## Slides
 
 Host a service that collects images from a chosen directory and broadcasts them out for viewing. Intended to operate as a digital picture frame type scenario.
 
 Supports:
+
 - Exif reading
 - Mapbox API for GPS data
 - Shuffling data
@@ -30,11 +25,11 @@ Slide show viewer for family picture viewing.
 
 ## Streamer
 
-Small test for a media streaming application *Aqua+*. This is the server-side project created to experiment with uploads and media.
+Small test for a media streaming application _Aqua+_. This is the server-side project created to experiment with uploads and media.
 
 ## Streamer-client
 
-Client-side project from the streaming application *Aqua+*. Created to experiment with `preact`.
+Client-side project from the streaming application _Aqua+_. Created to experiment with `preact`.
 
 ## Muzaque Parser
 
@@ -47,6 +42,7 @@ Parses a library XML exported from iTunes/Apple Music, and displays basic aggreg
 Pre-H-util project that's hosted somewhere and offers a small UI to perform various utility tasks.
 
 Supports:
+
 - Prefixing image names by their creation date
 - Downloading and tagging youtube videos
 - Migrating files
