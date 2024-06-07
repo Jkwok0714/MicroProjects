@@ -25,11 +25,11 @@ Slide show viewer for family picture viewing.
 
 ## Streamer
 
-Small test for a media streaming application _Aqua+_. This is the server-side project created to experiment with uploads and media.
+Moved to [own project](https://github.com/TestaDiMucca/AquaPlus)
 
 ## Streamer-client
 
-Client-side project from the streaming application _Aqua+_. Created to experiment with `preact`.
+Moved to [own project](https://github.com/TestaDiMucca/AquaPlus)
 
 ## Muzaque Parser
 
