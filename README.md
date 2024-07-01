@@ -19,6 +19,10 @@ Supports:
 
 Eventually received a lot of edits to make it work more like a slide viewer, which probably caused some mess.
 
+## CSV Compare
+
+Load a CSV and view its contents in a table view. Also allows quickly comparing the data between rows.
+
 ## Slideshow
 
 Slide show viewer for family picture viewing.
