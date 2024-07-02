@@ -15,6 +15,10 @@ Supports:
 
 Eventually received a lot of edits to make it work more like a slide viewer, which probably caused some mess.
 
+## CSV Compare
+
+Load a CSV and view its contents in a table view. Also allows quickly comparing the data between rows.
+
 ## Utilities
 
 Pre-H-util project that's hosted somewhere and offers a small UI to perform various utility tasks.
