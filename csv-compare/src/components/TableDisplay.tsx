@@ -1,4 +1,4 @@
-import { Box, Card, CardBody, CardHeader } from '@chakra-ui/react';
+import { Box, Button, Card, CardBody, CardHeader } from '@chakra-ui/react';
 import {
   Column,
   ColumnDef,
@@ -16,6 +16,8 @@ import {
 import { CsvReturnData, CsvRow } from '../util/otherTypes';
 import { useEffect, useMemo, useState } from 'react';
 import { isNumeric } from '../util/helpers';
+import useToggleState from '../hooks/useToggleState';
+import ColumnModal from './ColumnModal';
 
 type Props = {
   onCancel?: () => void;
@@ -25,8 +27,11 @@ type Props = {
 export default function TableDisplay({ csvData }: Props) {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnOrder, setColumnOrder] = useState<ColumnOrderState>([]);
+  const [columnVisibility, setColumnVisibility] = useState({});
   const [data, setData] = useState<CsvRow[]>([]);
   const [sorting, setSorting] = useState<SortingState>([]);
+
+  const modalState = useToggleState(['columnSelector']);
 
   const columns = useMemo<ColumnDef<CsvRow, any>[]>(() => {
     setData(csvData.rows);
@@ -53,6 +58,7 @@ export default function TableDisplay({ csvData }: Props) {
     filterFns: {},
     state: {
       columnFilters,
+      columnVisibility,
       columnOrder,
       sorting,
     },
@@ -64,6 +70,7 @@ export default function TableDisplay({ csvData }: Props) {
     enableSorting: true,
     onColumnFiltersChange: setColumnFilters,
     onColumnOrderChange: setColumnOrder,
+    onColumnVisibilityChange: setColumnVisibility,
     onSortingChange: setSorting,
     getCoreRowModel: getCoreRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
@@ -73,7 +80,16 @@ export default function TableDisplay({ csvData }: Props) {
 
   return (
     <Card w="95%" h="90%" overflowY="auto">
-      <CardHeader mb="1">The thing</CardHeader>
+      <ColumnModal
+        table={table}
+        isOpen={modalState.columnSelector.isOn}
+        onCancel={modalState.columnSelector.off}
+        handleConfirm={modalState.columnSelector.off}
+      />
+      <CardHeader mb="1">
+        {csvData.fileName ?? 'CSV Data'}{' '}
+        <Button onClick={modalState.columnSelector.on}>Select columns</Button>
+      </CardHeader>
       <CardBody>
         <Box w="100%" overflowX="auto">
           <table>

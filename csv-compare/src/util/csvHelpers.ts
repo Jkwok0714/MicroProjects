@@ -1,9 +1,7 @@
-import { CsvRow } from './otherTypes';
+import { CsvReturnData, CsvRow } from './otherTypes';
 
 /** CSV helper courtesy chatGPT 3.5 */
-export function parseCSV(
-  file: File
-): Promise<{ rows: CsvRow[]; headers: string[] }> {
+export function parseCSV(file: File): Promise<CsvReturnData> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
 
@@ -42,7 +40,7 @@ export function parseCSV(
         csvData.push(row);
       }
 
-      resolve({ headers, rows: csvData });
+      resolve({ headers, rows: csvData, fileName: file.name });
     };
 
     reader.onerror = () => {

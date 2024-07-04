@@ -13,7 +13,7 @@ import {
   Box,
 } from '@chakra-ui/react';
 
-interface BasicModalProps extends Omit<ModalProps, 'onClose'> {
+export interface BasicModalProps extends Omit<ModalProps, 'onClose'> {
   onCancel: () => void;
   handleConfirm: () => void;
   title: string;
@@ -26,8 +26,8 @@ const BasicModal: React.FC<React.PropsWithChildren<BasicModalProps>> = ({
   children,
   onCancel,
   handleConfirm,
-  cancelButtonText,
-  confirmButtonText,
+  cancelButtonText = 'Cancel',
+  confirmButtonText = 'OK',
   disableConfirm,
   title,
   isOpen,

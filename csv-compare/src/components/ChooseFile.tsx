@@ -1,7 +1,7 @@
 import { Card, CardBody, Input } from '@chakra-ui/react';
 import { useCallback } from 'react';
 import { parseCSV } from '../util/csvHelpers';
-import { CsvReturnData, CsvRow } from '../util/otherTypes';
+import { CsvReturnData } from '../util/otherTypes';
 
 type Props = {
   onCsvData: (data: CsvReturnData) => void;
@@ -20,7 +20,7 @@ function ChooseFile({ onCsvData }: Props) {
         console.error('Error parsing CSV:', error);
       }
     },
-    []
+    [onCsvData]
   );
 
   return (
