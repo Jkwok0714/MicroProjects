@@ -24,7 +24,7 @@ function ChooseFile({ onCsvData }: Props) {
   );
 
   return (
-    <Card>
+    <Card w="50%" minW="500px">
       <CardBody>
         Choose one
         <Input
