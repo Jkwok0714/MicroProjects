@@ -1,4 +1,4 @@
-import { Box, Card, CardBody } from '@chakra-ui/react';
+import { Box, Card, CardBody, CardHeader } from '@chakra-ui/react';
 import {
   Column,
   ColumnDef,
@@ -73,6 +73,7 @@ export default function TableDisplay({ csvData }: Props) {
 
   return (
     <Card w="95%" h="90%" overflowY="auto">
+      <CardHeader mb="1">The thing</CardHeader>
       <CardBody>
         <Box w="100%" overflowX="auto">
           <table>
