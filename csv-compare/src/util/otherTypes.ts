@@ -10,4 +10,5 @@ export type CsvRow = {
 export type CsvReturnData = {
   rows: CsvRow[];
   headers: string[];
+  fileName: string;
 };

@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
-import './App.css';
 import { Box, Heading } from '@chakra-ui/react';
+import './App.css';
 import ChooseFile from './components/ChooseFile';
 import TableDisplay from './components/TableDisplay';
 import { CsvReturnData, View } from './util/otherTypes';
