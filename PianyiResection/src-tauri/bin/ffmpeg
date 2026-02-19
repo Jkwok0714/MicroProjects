@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if command -v ffmpeg >/dev/null 2>&1; then
+  exec ffmpeg "$@"
+fi
+
+echo "ffmpeg sidecar missing and no system ffmpeg found on PATH." >&2
+exit 127
