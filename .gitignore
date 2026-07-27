@@ -1,5 +1,12 @@
 .env
 node_modules/
+target/
+dist/
+src-tauri/target/
+Cargo.lock
+*.local
+*.log
+vite.config.timestamp-*
 YTLands/public
 log.txt
 downloads/
@@ -13,3 +20,4 @@ testData/
 *.db
 build/
 lib/
+.worktrees/
